@@ -1,0 +1,156 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: serif, "Times New Roman", Times, serif;
+}
+
+/* Set the base font size */
+html {
+  font-size: 62.5%;
+}
+header {
+  overflow: hidden;
+  display: grid;
+  grid-auto-flow: column;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding-right: 2rem;
+  z-index: 999999999999;
+  width: 100%;
+  backdrop-filter: blur(16px) saturate(200%);
+  height: 8rem;
+  top: 0;
+  position: fixed;
+  background: #040911c6;
+  box-shadow: 4px 4px 20px 20px #122038b4;
+}
+header svg {
+  height: 8rem;
+  width: 18.3rem;
+}
+#loginPage_btn,
+#registerPage_btn {
+  height: 100%;
+  width: max-content;
+  padding: 1.8rem 1rem;
+  font-size: 2rem;
+  background-color: #0969a47b;
+  color: whitesmoke;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bolder;
+  outline: none;
+  border: none;
+  transition: all 300ms;
+}
+#loginPage_btn:hover,
+#registerPage_btn:hover {
+  background-color: #0969a4c9;
+}
+#loginPage_btn:active,
+#registerPage_btn:active {
+  scale: 0.9;
+  background-color: #0969a4c9;
+}
+
+h1 {
+  font-size: 3rem;
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-align: center;
+  color: rgb(119, 164, 219);
+  text-shadow: 0px 1px 6px rgb(47 46 46);
+}
+/* Set the background color and center the content */
+body {
+  min-height: 100vh;
+  max-height: max-content;
+  width: 100vw;
+  padding-top: 10rem;
+  display: grid;
+  place-items: center;
+  background-color: #1d3557;
+  background-color: #2c5c73;
+}
+
+/* Style the form container */
+form {
+  display: grid;
+  max-height: 60rem;
+  min-height: fit-content;
+  align-items: center;
+  max-width: 60rem;
+  min-width: 40rem;
+  padding: 2rem;
+  gap: 3rem;
+  border-radius: 1.5rem;
+  background-color: #5692b0b1;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: #f1faee;
+  backdrop-filter: blur(160px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Glassmorphism card effect */
+form {
+  position: relative;
+}
+
+/* Style the labels */
+label {
+  font-weight: bolder;
+  font-size: 2rem;
+  color: #8fb0b9;
+  text-shadow: 1.2px 1.2px 1px #6379aa;
+  text-transform: uppercase;
+}
+input {
+  outline: none;
+}
+/* Style the input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+  border: 2px solid #ccc;
+  font-size: 1.4rem;
+  font-family: Montserrat;
+  transition: border-color 0.3s ease;
+}
+
+/* Style the input fields on focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #abc4e0;
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  margin-top: 2rem;
+  padding: 1.5rem 2.5rem;
+  text-transform: uppercase;
+  border: none;
+  letter-spacing: 0.3rem;
+  border-radius: 1.5rem;
+  font-size: 1.6rem;
+
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  cursor: pointer;
+  transition: 0.5s ease;
+  background-color: #023d60;
+  color: whitesmoke;
+}
+
+/* Style the submit button on hover */
+input[type="submit"]:hover {
+  letter-spacing: 0.6rem;
+  background-color: #a8dadc;
+  color: #1d3557;
+}

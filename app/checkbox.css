@@ -1,0 +1,181 @@
+::-webkit-scrollbar {
+  width: 1rem;
+  display: none;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(88, 88, 88);
+  border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(169, 169, 169);
+}
+.todo-list-box {
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+}
+
+.todo-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
+  grid-template-rows: 0.75fr 1.25fr;
+  row-gap: 3rem;
+  column-gap: 2rem;
+  align-items: center;
+  /* height: 15rem; */
+  height: max-content;
+  width: 100%;
+  padding: 1rem 0.5rem;
+  margin-bottom: 0.8rem;
+  background: linear-gradient(135deg, #dff9df, #ebf9ec);
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: all 500ms linear;
+}
+.todo-item .heading-edit {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-content: center;
+}
+.deleteTask {
+  position: absolute;
+  top: -0.8rem;
+  right: -0.7rem;
+  background-color: transparent;
+}
+.deleteTask .fa-circle-minus {
+  font-size: 2rem;
+}
+.editTask,
+.updateTask {
+  border: 1px solid #000000;
+  border-radius: 1rem;
+  width: max-content;
+  padding: 0.5rem;
+  background-color: #70be8b;
+  color: white;
+  font-size: 1.5rem;
+  align-self: self-end;
+  font-weight: 900;
+}
+.updateTask {
+  background-color: #0995ff;
+}
+.textDisplay {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.task-heading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  height: 100%;
+  max-width: 45rem;
+  min-width: 20rem;
+  /*height: 5rem; */
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: "Signika Negative", sans-serif;
+  align-items: center;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+.textDisplay:last-child {
+  grid-column: span 2;
+}
+.task-description {
+  font-size: 1.6rem;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  align-content: start;
+  border-radius: 1rem;
+  font-family: "Montserrat Alternates", sans-serif;
+  padding: 1rem;
+}
+.todo-item:hover {
+  /* height: 15rem; */
+}
+textarea.task-heading,
+textarea.task-description {
+  /* display: none; */
+  padding: 0rem 1rem;
+  border: 1px solid gray;
+}
+.hidden {
+  display: none;
+}
+.input-disabled {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  pointer-events: none;
+}
+.checkbox-container {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 0.6rem;
+  grid-row: span 2;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+  display: none;
+}
+
+.checkmark {
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  background-color: #fff;
+  border: 0.2rem solid #ccc;
+  border-radius: 50%;
+}
+
+.checkbox-container input[type="checkbox"]:checked ~ .checkmark {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input[type="checkbox"]:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  content: "";
+  width: 0.5rem;
+  height: 1rem;
+  border: solid #fff;
+  border-width: 0 0.2rem 0.2rem 0;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.task-label {
+  font-size: 1.6rem;
+}

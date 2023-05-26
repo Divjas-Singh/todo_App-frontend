@@ -1,0 +1,206 @@
+:root {
+  --bodyBg: #d3d3d3;
+  --headerBg: #48e9bca1;
+  --headerBoxShadow: #2f584da6;
+  --addNoteBg: #f7d57f;
+  --addNoteColor: #4ba388;
+  --noteBg: #ffc505;
+  --noteBg: #141414;
+  --noteColor: #96b4b4;
+  --noteDescBg: #4c82be85;
+  --noteDescBg: #ffffffa6;
+  --taskBg: #f42b5a;
+  --taskDescBg: #ffffff;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: serif, "Times New Roman", Times, serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  min-height: 100dvh;
+  /* max-height: max-content; */
+  width: 100dvw;
+  gap: 3rem;
+  padding: 13rem 0 3rem 0;
+  display: grid;
+  place-items: center;
+  align-items: start;
+  background-color: #d3d3d3;
+  background-color: #000000eb;
+}
+button {
+  -webkit-tap-highlight-color: transparent;
+  transition: all 300ms;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+header {
+  -webkit-tap-highlight-color: transparent;
+  align-items: start;
+  overflow: hidden;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  padding-right: 2rem;
+  z-index: 999999999999;
+  width: 100dvw;
+  backdrop-filter: blur(16px) saturate(200%);
+  height: 14dvh;
+  top: -1px;
+  left: -1px;
+  position: fixed;
+  /* background: #aad3ffca; */
+  background: #6fb59fe3;
+  background-color: #375779b3;
+  background-color: var(--headerBg);
+  box-shadow: 2px 2px 20px 20px #2f584da6;
+  box-shadow: 2px 2px 20px 20px #122038b4;
+  box-shadow: 2px 2px 20px 20px var(--headerBoxShadow);
+}
+.logo {
+  position: relative;
+}
+header svg {
+  position: absolute;
+  /* left: -16rem; */
+  /* left: -11rem; */
+  height: 12rem;
+  /* top: -1.1rem; */
+  width: 27rem;
+}
+textarea {
+  resize: none;
+}
+textarea:focus {
+  outline: none;
+  border: none;
+}
+.btns {
+  align-self: center;
+}
+.add_note_btn {
+  overflow: hidden;
+  border-radius: 50%;
+  position: fixed;
+  padding-left: 1rem;
+  height: 8rem;
+  width: 8rem;
+  bottom: 3rem;
+  right: 1rem;
+  background-color: #f7d57f;
+  background-color: #2f584dba;
+  z-index: 99;
+}
+.fa-file-circle-plus {
+  font-size: 5rem;
+  color: #4ba388;
+  color: #b6e1d5;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100dvw;
+}
+#allNotes,
+#allTasks {
+  max-height: 78dvh;
+  /* min-height: max-content; */
+  width: 100%;
+  display: grid;
+  align-content: start;
+  gap: 1.5rem;
+  padding: 3rem 2rem;
+  border-radius: 4rem;
+  overflow-y: scroll;
+}
+#allNotes h1,
+#allTasks h1 {
+  position: fixed;
+  font-size: 5rem;
+  color: #20efb1;
+  color: var(--noteColor);
+  bottom: 1rem;
+  text-align: center;
+  width: 45%;
+  border-top: 2px solid white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.editBtns {
+  display: grid;
+  grid-template-columns: 1fr max-content max-content;
+  gap: 1rem;
+  width: 100%;
+}
+.editBtns button {
+  width: max-content;
+  padding: 0.5rem;
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 1.7rem;
+}
+.Note {
+  display: grid;
+  gap: 1rem;
+  height: 5rem;
+  color: var(--noteColor);
+  font-size: 1.5rem;
+  grid-template-rows: 1fr 4fr max-content;
+  border-radius: 1rem;
+  background-color: rgba(158, 157, 157, 0.764);
+  background-color: var(--noteBg);
+  border: 2px solid whitesmoke;
+  padding: 1rem 0.5rem;
+  overflow: hidden;
+  transition: all 300ms;
+}
+.Note h2 {
+  overflow: hidden;
+  height: 4rem;
+  width: 80%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.noteDescription,
+.taskDescription {
+  padding: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: 600;
+  border-radius: 0.7rem;
+  min-height: 8rem;
+  border: none;
+}
+.Note:hover {
+  height: 25rem;
+  overflow: scroll;
+}
+.Note:hover > h2 {
+  overflow: visible;
+  height: max-content;
+  width: 100%;
+  text-overflow: unset;
+  white-space: normal;
+}
+.Note .task-description {
+  background-color: var(--taskDescBg);
+}
+button:active {
+  scale: 0.9;
+}
+.deleteNote {
+  background-color: #fc2845;
+}
+.editNote {
+  background-color: #0fbf4d;
+}
+.saveNote {
+  background-color: #4ba388;
+}
