@@ -83,9 +83,9 @@ function checkCookie(cookieName) {
       return console.log("The cookie exists");
     }
   }
-  console.log(cookisSpotted);
+  // console.log(cookisSpotted);
   if (!cookisSpotted) {
-    window.location.assign("/todo_App-frontend/login_page/login.html");
+    // window.location.assign("/todo_App-frontend/login_page/login.html");
   }
 }
 function addAllEventListeners(todoli) {
