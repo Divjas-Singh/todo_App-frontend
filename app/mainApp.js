@@ -81,7 +81,7 @@ function checkCookie(cookieName) {
       return console.log("The cookie exists");
     }
   }
-  window.location.assign("./login_page/login.html");
+  window.location.assign("/login_page/login.html");
 }
 function addAllEventListeners(todoli) {
   todoli.querySelector(".deleteTask").addEventListener("click", () => {
