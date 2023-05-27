@@ -37,7 +37,7 @@ login_form.addEventListener("submit", async (e) => {
         console.log(result, document.cookie);
 
         // window.location.href = "/app/main.html";
-        window.location.assign("../app/main.html");
+        window.location.assign("../index.html");
       } else {
         console.error(result);
       }

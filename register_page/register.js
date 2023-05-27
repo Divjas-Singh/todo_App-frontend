@@ -58,7 +58,7 @@ function checkCookie(cookieName) {
 
 var cookieExists = checkCookie("logInAuth");
 if (cookieExists) {
-  window.location.assign("../app/main.html");
+  window.location.assign("../index.html");
 } else {
   console.log("The cookie does not exist.");
 }
