@@ -74,14 +74,18 @@ const taskComplete = async (task_id, task_status) => {
   displayTasks();
 };
 function checkCookie(cookieName) {
+  let cookisSpotted = false;
   var cookies = document.cookie.split(";");
   for (var i = 0; i < cookies.length; i++) {
     var cookie = cookies[i].trim();
     if (cookie.indexOf(cookieName + "=") === 0) {
+      cookisSpotted = true;
       return console.log("The cookie exists");
     }
   }
-  window.location.assign("/todo_App-frontend/login_page/login.html");
+  if (cookisSpotted) {
+    window.location.assign("/todo_App-frontend/login_page/login.html");
+  }
 }
 function addAllEventListeners(todoli) {
   todoli.querySelector(".deleteTask").addEventListener("click", () => {
