@@ -190,18 +190,23 @@ function createBanner(
   li.insertAdjacentHTML("afterbegin", taskFormat);
 }
 function addTask() {
-  const todoli = document.createElement("li");
-  createBanner(todoli, "new");
-  addAllEventListeners(todoli);
-  //
-  //
-  //
-  taskList.insertAdjacentElement("afterbegin", todoli);
+  loadData().then((result) => {
+    if (result.success == false)
+      return window.location.assign("/todo_App-frontend/login_page/login.html");
+
+    const todoli = document.createElement("li");
+    createBanner(todoli, "new");
+    addAllEventListeners(todoli);
+    //
+    //
+    //
+    taskList.insertAdjacentElement("afterbegin", todoli);
+  });
 }
 function displayTasks() {
   loadData()
     .then((result) => {
-      if (result.success) {
+      if (result.success == true) {
         console.log(result);
         createdTasks = result.result;
         console.log(createdTasks);
@@ -240,13 +245,15 @@ function displayTasks() {
           //
           taskList.appendChild(todoli);
         });
-      } else {
-        return console.error(result);
+      } else if (result.success == false) {
+        //
+        console.log(result.success);
+        window.location.assign("/todo_App-frontend/login_page/login.html");
       }
     })
     .catch((error) => {
       console.error(error);
+      window.location.assign("/todo_App-frontend/login_page/login.html");
     });
 }
-window.onload = checkCookie("logInAuth");
-displayTasks();
+window.onload = displayTasks();
